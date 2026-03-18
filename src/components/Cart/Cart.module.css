@@ -1,0 +1,269 @@
+.wrapper {
+  position: relative;
+}
+
+.basket {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.4rem;
+  color: rgb(var(--foreground-rgb));
+  background: none;
+  border: none;
+  transition: opacity 200ms;
+}
+
+.basket:hover {
+  opacity: 0.7;
+}
+
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.badge {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.4rem;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.3rem;
+  border-radius: 50%;
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-start-rgb));
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.panel {
+  position: fixed;
+  top: 3.5rem;
+  right: var(--spacing-xl);
+  width: 280px;
+  background: rgb(var(--background-start-rgb));
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 31;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid rgba(var(--card-border-rgb), 0.15);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  position: sticky;
+  top: 0;
+  background: rgb(var(--background-start-rgb));
+  z-index: 1;
+}
+
+.panelTitle {
+  flex: 1;
+}
+
+.panelHeaderQty {
+  min-width: 4.5rem;
+  text-align: center;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  opacity: 0.6;
+  padding: 0 0 0 0.5rem;
+  line-height: 1;
+  transition: opacity 200ms;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: transparent;
+}
+
+.empty {
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--foreground-rgb), 0.2) transparent;
+}
+
+.itemList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.itemList::-webkit-scrollbar-thumb {
+  background: rgba(var(--foreground-rgb), 0.2);
+  border-radius: 2px;
+}
+
+.itemList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid rgba(var(--card-border-rgb), 0.1);
+}
+
+.itemName {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.3;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: opacity 200ms;
+  flex-shrink: 0;
+}
+
+.removeBtn:hover {
+  opacity: 1;
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.qtyBtn {
+  background: none;
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  cursor: pointer;
+  color: inherit;
+  font-size: 0.7rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 200ms;
+}
+
+.qtyBtn:hover {
+  background: rgba(var(--callout-rgb), 0.5);
+}
+
+.qtyBtn:disabled {
+  opacity: 0.2;
+  cursor: default;
+  background: none;
+}
+
+.itemQty {
+  font-size: 0.8rem;
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-top: 1px solid rgba(var(--card-border-rgb), 0.15);
+}
+
+.total {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.checkoutLink {
+  padding: 0.4rem 0.8rem;
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-start-rgb));
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: opacity 200ms;
+}
+
+.checkoutLink:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .overlay {
+    background: rgba(var(--foreground-rgb), 0.3);
+  }
+
+  .panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 70vh;
+    border: none;
+    border-top: 1px solid rgba(var(--card-border-rgb), 0.2);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+  }
+
+  .item {
+    padding: 0.8rem 1rem;
+  }
+
+  .itemList {
+    max-height: 10rem;
+  }
+
+  .footer {
+    padding: 0.8rem 1rem;
+  }
+
+  .checkoutLink {
+    padding: 0.5rem 1rem;
+  }
+}

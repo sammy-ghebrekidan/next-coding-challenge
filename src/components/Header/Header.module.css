@@ -1,0 +1,54 @@
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: #111;
+  color: #fff;
+  z-index: 100;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.skipLink:focus {
+  top: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: rgba(var(--background-start-rgb), 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(var(--card-border-rgb), 0.15);
+  font-family: var(--font-mono);
+}
+
+.spacer {
+  height: 3.5rem;
+}
+
+.storeName {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: rgb(var(--foreground-rgb));
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .storeName {
+    font-size: 0.85rem;
+  }
+}
